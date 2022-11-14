@@ -36,9 +36,22 @@ const tweetsArray = [
 
 function App() {
   return (
-    <div className="App">
-      <Tweet tweet={tweetsArray[0]}/>
-    </div>
+    <div>
+      <div className="App">
+        <Tweet tweet={tweetsArray[0]}/>
+      </div>
+      <div className="App">
+        <Tweet tweet={tweetsArray[1]}/>
+      </div>
+      <div className="App">
+        <Tweet tweet={tweetsArray[2]}/>
+      </div>
+  </div>
+    /* tweetsArray.forEach(tweetDisplay => {
+      <div className="App">
+        <Tweet tweet={tweetDisplay[0]}/>
+      </div>
+    }); */
   );
 }
 
