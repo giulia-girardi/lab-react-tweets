@@ -1,5 +1,6 @@
 import "./App.css";
 import Tweet from "./components/Tweet";
+import { v4 as uuidv4 } from 'uuid';
 
 const tweetsArray = [
   {
@@ -34,24 +35,18 @@ const tweetsArray = [
   },
 ];
 
+
 function App() {
   return (
     <div>
-      <div className="App">
-        <Tweet tweet={tweetsArray[0]}/>
-      </div>
-      <div className="App">
-        <Tweet tweet={tweetsArray[1]}/>
-      </div>
-      <div className="App">
-        <Tweet tweet={tweetsArray[2]}/>
-      </div>
-  </div>
-    /* tweetsArray.forEach(tweetDisplay => {
-      <div className="App">
-        <Tweet tweet={tweetDisplay[0]}/>
-      </div>
-    }); */
+      {tweetsArray.map((tweet)=> {
+        return (
+        <div key={uuidv4()} className="App">
+          <Tweet tweet={tweet}/>
+        </div>
+        )
+      })}
+    </div>
   );
 }
 
